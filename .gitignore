@@ -1,10 +1,11 @@
-Course Outline/
-Presentations/
-Thumbnails/
 node_modules/
 reports/
 test-results/
 playwright-report/
-scripts/generate-course.mjs
-scripts/restructure-code-folder.mjs
+.env
 .DS_Store
+
+# Local course artifacts kept outside the GitHub code repo
+Course Outline/
+Presentations/
+Thumbnails/
