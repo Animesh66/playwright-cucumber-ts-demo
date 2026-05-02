@@ -1,0 +1,33 @@
+{
+  "name": "playwright-cucumber-typescript-course",
+  "version": "1.0.0",
+  "description": "Playwright with Cucumber using TypeScript beginner course code.",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:smoke": "cucumber-js --tags \"@smoke\"",
+    "test:regression": "cucumber-js --tags \"@regression\"",
+    "test:api": "cucumber-js --tags \"@api\"",
+    "test:ui": "cucumber-js --tags \"@ui\"",
+    "test:parallel": "cucumber-js --parallel 3",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "install:browsers": "playwright install",
+    "report": "node scripts/open-report.js"
+  },
+  "keywords": [
+    "playwright",
+    "cucumber",
+    "typescript",
+    "bdd",
+    "automation-testing"
+  ],
+  "author": "Learn with Animesh",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.2.0",
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^22.15.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
