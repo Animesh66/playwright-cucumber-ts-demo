@@ -2,6 +2,9 @@ import { Given, Then, When } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
 import { CustomWorld } from '../support/world';
 import { config } from '../support/config';
+import { ShopPage } from '../pages/ShopPage';
+import { LoginPage } from '../pages/LoginPage';
+import { RegisterPage } from '../pages/RegisterPage';
 
 
 Given('I open the demo application', async function (this: CustomWorld) {
@@ -22,27 +25,27 @@ Then('the page URL should contain {string}', async function (this: CustomWorld, 
 });
 
 Given('I am on the register page', async function (this: CustomWorld) {
-  await this.page.goto(`${config.baseUrl}/register`);
+  await new RegisterPage(this.page).open();
 });
 
 When('I submit registration with name {string}, email {string}, password {string}, confirm password {string}, gender {string} and date of birth {string}', async function (this: CustomWorld, name: string, email: string, password: string, confirmPassword: string, gender: string, dateOfBirth: string) {
-  await this.page.getByLabel('Full Name').fill(name); await this.page.getByLabel('Email Address').fill(email); await this.page.getByLabel('Password', { exact: true }).fill(password); await this.page.getByLabel('Confirm Password').fill(confirmPassword); if (gender) await this.page.getByLabel(new RegExp(gender, 'i')).check(); await this.page.getByLabel('Date of Birth').fill(dateOfBirth); await this.page.getByRole('button', { name: /create account|register/i }).click();
+  await new RegisterPage(this.page).submit({ name, email, password, confirmPassword, gender, dateOfBirth });
 });
 
 Then('I should see registration feedback {string}', async function (this: CustomWorld, message: string) {
-  await expect(this.page.getByText(new RegExp(message, 'i'))).toBeVisible();
+  await new RegisterPage(this.page).expectFeedback(message);
 });
 
 Given('I am on the login page', async function (this: CustomWorld) {
-  await this.page.goto(`${config.baseUrl}/login`);
+  await new LoginPage(this.page).open();
 });
 
 When('I login with email {string} and password {string}', async function (this: CustomWorld, email: string, password: string) {
-  await this.page.getByLabel('Email Address').fill(email); await this.page.getByLabel('Password').fill(password); await this.page.getByRole('button', { name: 'Sign In' }).click();
+  await new LoginPage(this.page).login(email, password);
 });
 
 Then('I should see login error {string}', async function (this: CustomWorld, message: string) {
-  await expect(this.page.getByText(message)).toBeVisible();
+  await new LoginPage(this.page).expectError(message);
 });
 
 When('I add the following product to the cart', async function (this: CustomWorld, table) {
@@ -58,7 +61,7 @@ Then('my cart should contain {string}', async function (this: CustomWorld, produ
 });
 
 When('I open product details for {string}', async function (this: CustomWorld, productName: string) {
-  await this.page.getByText(productName).first().click();
+  await new ShopPage(this.page).openProduct(productName);
 });
 
 Then('I should see product details for {string}', async function (this: CustomWorld, productName: string) {
