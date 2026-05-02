@@ -1,0 +1,10 @@
+Course Outline/
+Presentations/
+Thumbnails/
+node_modules/
+reports/
+test-results/
+playwright-report/
+scripts/generate-course.mjs
+scripts/restructure-code-folder.mjs
+.DS_Store
