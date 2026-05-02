@@ -1,10 +1,10 @@
+Course Outline/
+Presentations/
+Thumbnails/
 node_modules/
 reports/
 test-results/
 playwright-report/
-.env
-.DS_Store
-Course Outline/
-Presentations/
-Thumbnails/
 scripts/generate-course.mjs
+scripts/restructure-code-folder.mjs
+.DS_Store
