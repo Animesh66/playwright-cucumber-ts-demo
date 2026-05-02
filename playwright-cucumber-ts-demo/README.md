@@ -2,7 +2,7 @@
 
 Automation framework for the YouTube playlist **Playwright Cucumber TypeScript Full Course for Beginners (2026)**.
 
-Current branch: `part-19`
+Current branch: `part-20`
 
 ## Demo application
 
