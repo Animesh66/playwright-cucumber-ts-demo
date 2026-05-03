@@ -1,28 +1,53 @@
-# Playwright Cucumber TypeScript Course
+# Playwright with Cucumber TypeScript Course
 
-Automation framework for the YouTube playlist **Playwright Cucumber TypeScript Full Course for Beginners (2026)**.
+This branch supports **Part 2: Setup from Scratch** in the updated 12-video Learn With Animesh playlist.
 
-Current branch: `part-2`
+## Current Lecture
 
-## Demo application
+**YouTube Topic:** Install and Configure Playwright Cucumber TypeScript
 
-Use the app from https://github.com/Animesh66/demo-front-end.
+**What this branch is used for:**
+npm setup, TypeScript, Cucumber config, first project structure
+
+## Demo Application
 
 - UI: `http://localhost:5173`
 - API: `http://localhost:3000/api`
+- Demo app repository: https://github.com/Animesh66/demo-front-end
 
-## Setup
+## Useful Commands
 
 ```bash
 npm install
-npm run install:browsers
+npm run typecheck
 npm test
+npm run test:smoke
+npm run test:api
 ```
 
-## Useful scripts
+## Updated 12-Part Playlist Map
 
-- `npm test`: run all Cucumber scenarios
-- `npm run test:smoke`: run smoke scenarios
-- `npm run test:regression`: run regression scenarios
-- `npm run test:api`: run API scenarios
-- `npm run typecheck`: run TypeScript checks
+| Part | Topic | Key Coverage | Branch |
+| --- | --- | --- | --- |
+| 1 | Introduction to BDD Automation | BDD mindset, Gherkin basics, tool roles, final framework walkthrough | `part-1` |
+| 2 | Setup from Scratch | npm setup, TypeScript, Cucumber config, first project structure | `part-2` |
+| 3 | First BDD Test | Given/When/Then, matching step definitions, first browser run | `part-3` |
+| 4 | Locators and Actions | Playwright locators, navigation, click, fill, select, keyboard, hover | `part-4` |
+| 5 | Assertions and Debugging | web-first assertions, avoiding hard waits, screenshots and failure analysis | `part-5` |
+| 6 | Data Driven BDD | Examples tables, Data Tables, Doc Strings, reusable test data | `part-6` |
+| 7 | Hooks and World | Before/After hooks, isolated browser context, shared scenario state | `part-7` |
+| 8 | Page Object Model | Base page, Login/Register/Shop pages, thin step definitions | `part-8` |
+| 9 | Auth and Products | auth scenarios, product search, detail page validation | `part-9` |
+| 10 | Cart and Checkout | cart actions, checkout validation, confirmation and negative paths | `part-10` |
+| 11 | API and Hybrid Tests | Playwright request context, products/auth/orders API, API setup for UI | `part-11` |
+| 12 | Reports and CI | tags, profiles, reports, screenshots, traces, parallel, CI final review | `part-12` |
+
+## Recording Notes
+
+Use this branch while recording Part 2. Start from the feature file or setup file related to the topic, explain the concept in beginner-friendly language, then run the matching Cucumber command and show the result.
+
+## Connect
+
+- YouTube: https://www.youtube.com/@learn_with_animesh
+- LinkedIn: https://www.linkedin.com/in/qa-amukherjee/
+- Website: https://www.learnwithanimesh.com
